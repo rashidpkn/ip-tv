@@ -13,7 +13,7 @@ function Subscribe() {
     <div className='font-jost'>
       <NavBar />
       <div className="px-[10%] mt-36 mb-24">
-        <h1 className='text-center text-4xl font-semibold'>Get started by contacting one of our<br /> offices, or fill out the form below.</h1>
+        <h1 className='text-center text-4xl font-semibold'>Get started by filling the below order form.</h1>
 
         <form className='w-full lg:w-[800px] mx-auto   border-[#BABCBB] mt-5 space-y-5' onSubmit={e=>{e.preventDefault();formHandler();}}>
 
@@ -21,7 +21,7 @@ function Subscribe() {
             <label htmlFor="">Name</label>
             <div className="flex justify-between gap-5 flex-wrap">
               <input required className='h-12 w-full lg:w-96 rounded-md border outline-none border-[#BABCBB] pl-3' placeholder='First Name' type="text" />
-              <input required className='h-12 w-full lg:w-96 rounded-md border outline-none border-[#BABCBB] pl-3' placeholder='Second Name' type="text" />
+              <input required className='h-12 w-full lg:w-96 rounded-md border outline-none border-[#BABCBB] pl-3' placeholder='Last Name' type="text" />
             </div>
           </div>
 
@@ -38,13 +38,9 @@ function Subscribe() {
             <input required className='h-12 w-full rounded-md border outline-none border-[#BABCBB] pl-3' placeholder='Address' type="text" />
             <select required className='h-12 w-48 rounded-md border outline-none border-[#BABCBB] p-3' name="" id="">
               <option value="">Select Emirates</option>
-              <option value='Abu Dhabi'>Abu Dhabi</option>
               <option value='Dubai'>Dubai</option>
+              <option value='Abu Dhabi'>Abu Dhabi</option>
               <option value='Sharjah'>Sharjah</option>
-              <option value='Ajman'>Ajman</option>
-              <option value='Umm Al-Quwain'>Umm Al-Quwain</option>
-              <option value='Fujairah'>Fujairah</option>
-              <option value='Ras Al Khaimah'>Ras Al Khaimah</option>
             </select>
             </div>
           </div>

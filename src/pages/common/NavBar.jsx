@@ -19,6 +19,7 @@ function NavBar() {
                 <NavLink to={'/faq'}> FAQ </NavLink>
                 <NavLink to={'#'}> LIVE SUPPORT </NavLink>
                 <NavLink to={'#'}> CHANNEL LIST </NavLink>
+                <NavLink to={'#'}>REFERRAL PROGRAM</NavLink>
             </div>    
           </div>
         </div>

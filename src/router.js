@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import FAQ from "./pages/FAQ";
+import FAQS from "./pages/FAQ";
 import Home from "./pages/Home";
 import Login from "./pages/login";
 import Subscribe from "./pages/Subscribe";
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     },
     {
         path:'/faq',
-        element:<FAQ/>
+        element:<FAQS/>
     },
     {
         path:'/subscribe',
