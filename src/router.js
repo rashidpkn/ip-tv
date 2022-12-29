@@ -1,9 +1,14 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import AdminDashboard from "./pages/admin";
 import FAQS from "./pages/FAQ";
 import Home from "./pages/Home";
 import Login from "./pages/login";
 import Subscribe from "./pages/Subscribe";
+import UserDashboard from "./pages/user";
+import store from "./redux/store";
 
+
+const {loginStatus,role} = store.getState().auth
 
 const router = createBrowserRouter([
     {
@@ -16,11 +21,15 @@ const router = createBrowserRouter([
     },
     {
         path:'/subscribe',
-        element:<Subscribe />
+        element: loginStatus ? <Navigate replace to={'/dashboard'} />  :<Subscribe />
     },
     {
         path:'/login',
-        element:<Login/>
+        element:loginStatus ? <Navigate replace to={'/dashboard'} /> : <Login />
+    },
+    {
+        path:'/dashboard',
+        element:loginStatus ? (role === 'admin' ? <AdminDashboard /> : <UserDashboard />) : <Navigate replace to={'/login'} />
     },
 ])
 
