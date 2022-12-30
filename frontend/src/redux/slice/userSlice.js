@@ -1,26 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    fName:'',
-    lName:'',
+    fname:'',
+    lname:'',
     phone:'',
     address:'',
     emirates:'',
-    package:'',
+    packages:3,
     email:'',
-    password:''
+    password:'',
 }
 
 const userSlice = createSlice({
   name: 'UserSlice',
   initialState,
   reducers: {
-    setFName(state,{payload}){state.fName=payload},
-    setLName(state,{payload}){state.lName=payload},
+    setFName(state,{payload}){state.fname=payload},
+    setLName(state,{payload}){state.lname=payload},
     setPhone(state,{payload}){state.phone=payload},
     setAddress(state,{payload}){state.address=payload},
     setEmirates(state,{payload}){state.emirates=payload},
-    setPackage(state,{payload}){state.package=payload},
+    setPackage(state,{payload}){state.packages=payload},
     setEmail(state,{payload}){state.email=payload},
     setPassword(state,{payload}){state.password=payload},
   }

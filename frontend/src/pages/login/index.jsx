@@ -1,16 +1,39 @@
+import axios from 'axios'
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { setLoginStatus } from '../../redux/slice/authSlice'
+import backendIP from '../../backendIP'
+import { setLoginStatus, setRole } from '../../redux/slice/authSlice'
+import { setEmail, setFName, setLName, setPackage, setPassword } from '../../redux/slice/userSlice'
 import Footer from '../common/Footer'
 import NavBar from '../common/NavBar'
 
 function Login() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const formHandler = () =>{
-    dispatch(setLoginStatus(true))
-    navigate('/dashboard')
+
+  const {email,password} = useSelector(state=>state.user)
+
+  const formHandler = async () =>{
+    const res = await (await axios.post(`${backendIP}/user`, { email,password })).data
+    const { loginStatus, role, error,fname,lname,packages } = res
+    if (loginStatus === true) {
+     
+      dispatch(setFName(fname))
+      dispatch(setLName(lname))
+      dispatch(setLoginStatus(true))
+      dispatch(setPackage(packages))
+
+      if (role==='admin') {
+        dispatch(setRole('admin'))
+      } else {
+        dispatch(setRole('user'))
+      }
+      navigate('/dashboard')
+    }
+    else {
+      window.alert(error)
+    }
   }
 
   return (
@@ -24,7 +47,7 @@ function Login() {
           <div className="space-y-2">
             <label htmlFor="">Email</label>
             <div className="">
-              <input required className='h-12 w-full rounded-md border outline-none border-[#BABCBB] pl-3' placeholder='Email' type="email" />
+              <input value={email} onChange={e=>dispatch(setEmail(e.target.value))} required className='h-12 w-full rounded-md border outline-none border-[#BABCBB] pl-3' placeholder='Email' type="email" />
             </div>
           </div>
 
@@ -32,7 +55,7 @@ function Login() {
           <div className="space-y-2">
             <label htmlFor="">Password</label>
             <div className="">
-              <input minLength={8} required className='h-12 w-full rounded-md border outline-none border-[#BABCBB] pl-3' placeholder='password' type="password" />
+              <input value={password} onChange={e=>dispatch(setPassword(e.target.value))} minLength={8} required className='h-12 w-full rounded-md border outline-none border-[#BABCBB] pl-3' placeholder='password' type="password" />
             </div>
           </div>
           <div className="flex justify-between items-center">
