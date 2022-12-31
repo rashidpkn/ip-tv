@@ -12,11 +12,11 @@ export const databaseProviders = [
         port: 5432,
         username: 'postgres',
         password: '12345',
-        database: 'ip-tv',
+        database: 'iptv',
         logging:false
       });
       sequelize.addModels([user]);
-      await sequelize.sync({force:true});
+      await sequelize.sync({alter:true});
       
       return sequelize;
     },
