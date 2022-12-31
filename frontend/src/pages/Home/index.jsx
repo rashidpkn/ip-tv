@@ -13,7 +13,7 @@ import Aos from 'aos';
 function Home() {
   Aos.init()
   return (
-    <div className='font-jost'>
+    <div className='font-inter'>
       <NavBar />
       <Screen1 />
       <Screen2  />

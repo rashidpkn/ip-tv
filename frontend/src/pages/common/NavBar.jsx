@@ -9,7 +9,7 @@ function NavBar() {
   const dispatch = useDispatch()
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden font-inter">
       <div className="md:hidden">
         <div className={`${menu ? 'h-full' : 'h-[100px]'} min-h-[100px] duration-500 bg-black/70 fixed z-50 text-white w-full`}>
           <div className="flex justify-end items-center w-full h-[100px] px-[5%]">
@@ -29,31 +29,22 @@ function NavBar() {
         </div>
       </div>
 
-      <div className="hidden md:flex justify-between h-24 w-full navbar fixed text-white z-50 px-[5%]">
-        <div className="flex  gap-7 h-full items-center">
+      <div className="hidden md:flex justify-between items-center font-medium text-lg h-24 w-full bg-black fixed text-white z-50 px-[5%]">
           <NavLink to='/'>
             <img src="/image/common/logo.png" width={125} alt="logo" />
           </NavLink>
-          {
-            loginStatus ? <NavLink to={'/dashboard'}>DASHBOARD</NavLink> : <NavLink to='/subscribe'>SUBSCRIBE NOW</NavLink>
-          }
-          <NavLink to='#'>LIVE SUPPORT</NavLink>
-          <NavLink to='#'>HOW TO ?</NavLink>
-          <NavLink to='#'>CHANNELS</NavLink>
-          <NavLink to='/faq'>FAQ</NavLink>
-          <NavLink to={'#'}>REFERRAL PROGRAM</NavLink>
-          
-        </div>
-        <div className="flex items-center h-full">
+          <NavLink className={'flex justify-center items-center gap-1 '} to='/'>          <img src="/image/common/icon/home.png" alt="" />         <span>Home</span>         </NavLink>
+          <NavLink className={'flex justify-center items-center gap-1 '} to='/subscribe'> <img src="/image/common/icon/subscription.png" alt="" /> <span>Subscibe</span>     </NavLink>
+          <NavLink className={'flex justify-center items-center gap-1 '} to='#'>          <img src="/image/common/icon/how.png" alt="" />          <span>How it works</span> </NavLink>
+          <NavLink className={'flex justify-center items-center gap-1 '} to='/faq'>       <img src="/image/common/icon/faq.png" alt="" />          <span>FAQ</span>          </NavLink>
+          <NavLink className={'flex justify-center items-center gap-1 '} to={'#'}>        <img src="/image/common/icon/ref.png" alt="" />          <span>Referral</span>     </NavLink>  
           {
             loginStatus ?
-              <button className='h-12 w-28 bg-red-500 rounded-md text-white' onClick={()=>{dispatch(setLoginStatus(false))}}>LOGOUT</button> :
+              <button className='h-[43px] w-[169px] bg-[#FEDE00] rounded-2xl text-black' onClick={()=>{dispatch(setLoginStatus(false))}}>LOGOUT</button> :
               <NavLink to={'/login'}>
-                <button className='h-12 w-28 bg-red-500 rounded-md text-white' >LOGIN</button>
+                <button className='h-[43px] w-[169px] bg-[#FEDE00] font-medium text-xl rounded-2xl text-black' >LOGIN</button>
               </NavLink>
           }
-
-        </div>
       </div>
 
 
