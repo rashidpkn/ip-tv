@@ -29,15 +29,15 @@ function NavBar() {
         </div>
       </div>
 
-      <div className="hidden md:flex justify-between items-center font-medium text-lg h-24 w-full bg-black fixed text-white z-50 px-[5%]">
+      <div className="hidden md:flex justify-between items-center font-medium text-lg h-24 w-full bg-black sticky text-white z-50 px-[5%]">
           <NavLink to='/'>
             <img src="/image/common/logo.png" width={125} alt="logo" />
           </NavLink>
-          <NavLink className={'flex justify-center items-center gap-1 '} to='/'>          <img src="/image/common/icon/home.png" alt="" />         <span>Home</span>         </NavLink>
-          <NavLink className={'flex justify-center items-center gap-1 '} to='/subscribe'> <img src="/image/common/icon/subscription.png" alt="" /> <span>Subscibe</span>     </NavLink>
-          <NavLink className={'flex justify-center items-center gap-1 '} to='#'>          <img src="/image/common/icon/how.png" alt="" />          <span>How it works</span> </NavLink>
-          <NavLink className={'flex justify-center items-center gap-1 '} to='/faq'>       <img src="/image/common/icon/faq.png" alt="" />          <span>FAQ</span>          </NavLink>
-          <NavLink className={'flex justify-center items-center gap-1 '} to={'#'}>        <img src="/image/common/icon/ref.png" alt="" />          <span>Referral</span>     </NavLink>  
+          <NavLink className={'flex justify-center items-center gap-1 hover:drop-shadow-[2px_1px_7px_#03BAFA]'} to='/'>          <img src="/image/common/icon/home.png" alt="" />         <span>Home</span>         </NavLink>
+          <NavLink className={'flex justify-center items-center gap-1 hover:drop-shadow-[2px_1px_7px_#03BAFA]'} to='/subscribe'> <img src="/image/common/icon/subscription.png" alt="" /> <span>Subscibe</span>     </NavLink>
+          <NavLink className={'flex justify-center items-center gap-1 hover:drop-shadow-[2px_1px_7px_#03BAFA]'} to='#'>          <img src="/image/common/icon/how.png" alt="" />          <span>How it works</span> </NavLink>
+          <NavLink className={'flex justify-center items-center gap-1 hover:drop-shadow-[2px_1px_7px_#03BAFA]'} to='/faq'>       <img src="/image/common/icon/faq.png" alt="" />          <span>FAQ</span>          </NavLink>
+          <NavLink className={'flex justify-center items-center gap-1 hover:drop-shadow-[2px_1px_7px_#03BAFA]'} to={'#'}>        <img src="/image/common/icon/ref.png" alt="" />          <span>Referral</span>     </NavLink>  
           {
             loginStatus ?
               <button className='h-[43px] w-[169px] bg-[#FEDE00] rounded-2xl text-black' onClick={()=>{dispatch(setLoginStatus(false))}}>LOGOUT</button> :
@@ -54,3 +54,4 @@ function NavBar() {
 }
 
 export default NavBar
+

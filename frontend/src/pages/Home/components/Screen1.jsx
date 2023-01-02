@@ -15,18 +15,18 @@ function Screen1() {
   };
 
   return (
-    <div className="screen1 w-full h-screen overflow-hidden relative">
+    <div className="screen1 w-full h-[calc(100vh-6rem)] overflow-hidden relative">
       <Slider {...settings}>
         <div className="relative hidden">
           <div className="block md:hidden">
             <img src="/image/home/mob-cricket.png" className=' object-cover w-full h-screen' alt="" />
           </div>
           <div className="hidden md:block">
-            <img src="/image/home/cricket.png" className=' object-cover w-full h-screen' alt="" />
+            <img src="/image/home/cricket.png" className=' w-full h-screen' alt="" />
           </div>
-          <div className="absolute top-0 w-full h-full z-40 flex flex-col justify-center items-center text-center gap-5 text-white">
-            <h2 className='text-3xl md:text-5xl font-medium'>Just saw the most incredible catch in cricket history!</h2>
-            <h2 className='text-3xl md:text-5xl font-medium'>Empowering Athletes & Families to Build Wealth That Lasts</h2>
+          <div className="absolute top-0 w-full h-full z-40 flex flex-col justify-center lg:justify-start lg:mt-20 text-center gap-5 text-white">
+            <h2 className='text-3xl md:text-5xl font-medium font-inter'>Just saw the most incredible catch in cricket history!</h2>
+            <h2 className='text-3xl md:text-5xl font-medium font-inter'>#Cricket #sports</h2>
           </div>
         </div>
       </Slider>
