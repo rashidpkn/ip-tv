@@ -40,9 +40,9 @@ function NavBar() {
           <NavLink className={'flex justify-center items-center gap-1 hover:drop-shadow-[2px_1px_7px_#03BAFA]'} to={'#'}>        <img src="/image/common/icon/ref.png" alt="" />          <span>Referral</span>     </NavLink>  
           {
             loginStatus ?
-              <button className='h-[43px] w-[169px] bg-[#FEDE00] rounded-2xl text-black' onClick={()=>{dispatch(setLoginStatus(false))}}>LOGOUT</button> :
+              <button className='h-[43px] w-[169px] bg-[#FEDE00] rounded-2xl text-black' onClick={()=>{dispatch(setLoginStatus(false))}}>Logout</button> :
               <NavLink to={'/login'}>
-                <button className='h-[43px] w-[169px] bg-[#FEDE00] font-medium text-xl rounded-2xl text-black' >LOGIN</button>
+                <button className='h-[43px] w-[169px] bg-[#FEDE00] font-medium text-xl rounded-2xl text-black' >Login</button>
               </NavLink>
           }
       </div>
