@@ -15,7 +15,7 @@ function Screen1() {
   };
 
   return (
-    <div className="screen1 w-full h-[calc(100vh-6rem)] overflow-hidden relative">
+    <div className="screen1 w-full h-screen md:h-[calc(100vh-6rem)] overflow-hidden relative">
       <Slider {...settings}>
         <div className="relative hidden">
           <div className="block md:hidden">
