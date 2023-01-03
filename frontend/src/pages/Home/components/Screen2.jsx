@@ -34,7 +34,7 @@ function Screen2() {
                 </ul>
             </div>
 
-            <div className="margue h-[223px]  w-full border-y border-white flex">
+            <div className="margue h-[223px]  w-full border-y border-white hidden lg:flex">
                 <div className="h-full w-1/4 flex flex-col justify-center gap-5">
                     <span className='text-2xl font-medium'>Channels</span>
                     <h2 className='text-7xl font-bold'>22000+</h2>

@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom'
 function Screen3() {
   const navigate = useNavigate()
   return (
-    <div className='flex flex-col lg:flex-row gap-5  bg-black text-white h-full w-full overflow-hidden'>
+    <div className='flex flex-col lg:flex-row gap-5  bg-black text-white h-full w-full overflow-hidden '>
       <div data-aos="fade-right" data-aos-duration="2000" className="w-full lg:w-1/2">
         <img className='w-full h-full object-cover' src="/image/home/movie-remote.webp" alt="" />
       </div>
 
-      <div data-aos="fade-left" data-aos-duration="2000" className="w-full lg:w-1/2 flex flex-col justify-center gap-7">
+      <div data-aos="fade-left" data-aos-duration="2000" className="w-full px-[5%]  lg:w-1/2 flex flex-col justify-center gap-7 py-5">
         <div className="flex  items-center">
           <h2 className='text-[34px] font-medium'>WHY</h2> <img className='w-[172px]' src="/image/common/logo.png" alt="" />
         </div>
@@ -66,7 +66,7 @@ function Screen3() {
 
 
 
-        <button className={`w-[280px] h-[70px] border border-white float-right  flex group`} onClick={() => { navigate('/subscribe') }}>
+        <button className={`self-end w-[280px] h-[70px] border border-white float-right  flex group`} onClick={() => { navigate('/subscribe') }}>
           <div className="h-full w-4/5 flex relative">
             <h2 className={`absolute h-full w-full flex justify-center items-center group-hover:text-black text-xl font-medium`}>SUBSCRIBE NOW</h2>
             <div className="flex justify-center items-center h-full w-full group-hover:w-0 duration-500"></div>
