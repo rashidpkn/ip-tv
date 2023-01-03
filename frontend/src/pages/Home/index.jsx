@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../common/Footer'
 import NavBar from '../common/NavBar'
 
@@ -14,10 +14,19 @@ import { useSelector } from 'react-redux';
 function Home() {
   Aos.init()
   const {menu} = useSelector(state=>state.util)
+  useEffect(() => {
+    if(menu){
+        document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'visible'
+    }
+
+  }, [menu])
+  
   return (
     <div className='font-inter w-full overflow-hidden'>
       <NavBar />
-      <div className={`${menu && 'blur-sm'}`}>
+      <div  className={`${menu && 'blur-sm'}`}>
         <Screen1 />
         <Screen2 />
         <Screen3 />
