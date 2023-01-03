@@ -9,17 +9,21 @@ import Screen4 from './components/Screen4';
 import Screen5 from './components/Screen5';
 import 'aos/dist/aos.css'
 import Aos from 'aos';
+import { useSelector } from 'react-redux';
 
 function Home() {
   Aos.init()
+  const {menu} = useSelector(state=>state.util)
   return (
     <div className='font-inter w-full overflow-hidden'>
       <NavBar />
-      <Screen1 />
-      <Screen2  />
-      <Screen3  />
-      <Screen4 />
-      <Screen5  />
+      <div className={`${menu && 'blur-sm'}`}>
+        <Screen1 />
+        <Screen2 />
+        <Screen3 />
+        <Screen4 />
+        <Screen5 />
+      </div>
       <Footer />
     </div>
   )

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import {HomeOutlined,SubscriptionsOutlined,QuizOutlined} from '@mui/icons-material'
+
 function Footer() {
   return (
     <>
@@ -8,21 +10,22 @@ function Footer() {
 
         <Link to={'/'} >
           <div className="flex flex-col justify-center items-center hover:drop-shadow-[2px_1px_7px_#03BAFA]">
-            <img src="/image/common/icon/home.png" alt="" />
+            <HomeOutlined />
             <span>Home</span>
           </div>
         </Link>
         
         <Link to={'/subscribe'}>
           <div className="flex flex-col justify-center items-center hover:drop-shadow-[2px_1px_7px_#03BAFA] text-[#FEDE00]">
-            <img src="/image/common/icon/yellow-subscription.png" alt="" />
+            {/* <img src="/image/common/icon/yellow-subscription.png" alt="" /> */}
+            <SubscriptionsOutlined />
             <span>Subscribe</span>
           </div>
         </Link>
 
         <Link to={'/faq'}>
           <div className="flex flex-col justify-center items-center hover:drop-shadow-[2px_1px_7px_#03BAFA]">
-            <img src="/image/common/icon/faq.png" alt="" />
+            <QuizOutlined />
             <span>FAQ</span>
           </div>
         </Link>
