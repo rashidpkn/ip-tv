@@ -37,7 +37,7 @@ function Login() {
   }
 
   return (
-    <div className='font-jost'>
+    <div className='font-inter'>
       <NavBar />
       <div className="px-[10%] mt-36 mb-24">
         <h1 className='text-center text-4xl font-semibold'>Get started by filling the below order form.</h1>
@@ -60,9 +60,12 @@ function Login() {
           </div>
           <div className="flex justify-between items-center">
             <Link to={'#'}>
-              <p className='text-lg font-semibold'>Forgot Password ?</p>
+              <p className='text-lg font-light text-[#03A1FA]'>Forgot Password ?</p>
             </Link>
-            <button type="submit" className='h-12 w-28 bg-red-500 rounded-md  text-white'>Login</button>
+            <Link to={'/subscribe'}>
+              <p className='text-lg font-light text-[#03A1FA]'>Sign Up</p>
+              </Link>
+            <button type="submit" className='h-12 w-28 bg-[#FEDE00] rounded-md  text-black'>Login</button>
           </div>
 
         </form>

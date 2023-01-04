@@ -1,95 +1,85 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import Footer from '../common/Footer'
+import React from 'react'
 import NavBar from '../common/NavBar'
+import { useDispatch, useSelector } from 'react-redux'
+import { setPackage } from '../../redux/slice/userSlice'
+
+import { CheckCircleOutline } from '@mui/icons-material'
+import Footer from '../common/Footer'
 import GaugeChart from 'react-gauge-chart'
 
-
 function UserDashboard() {
-  const {fname,lname,packages} = useSelector(state=>state.user)
-  const [totalDays, setTotalDays] = useState(90)
-  const [balanceDays, setBalanceDays] = useState(90)
-  useEffect(() => {
-    if(Number(packages) === 12){
-        setTotalDays(365)
-        setBalanceDays(365)
-    }else if(Number(packages) === 6){
-      setTotalDays(180)
-      setBalanceDays(180)
-    }else{
-      setTotalDays(90)
-      setBalanceDays(90)
-    }
-    // eslint-disable-next-line
-  }, [])
-  
-  
-  return (
-    <div>
-      <NavBar/>
-        <div className="mt-24 py-[5%] px-[10%] space-y-10">
-          <h1 className='text-2xl font-medium'>Welcome {fname} {lname}</h1>
-          <div className="text-xl font-medium ">
-            <p>Your Package is: <br />{packages} Months </p>
-          </div>
 
-          <div className="w-72">
-              <GaugeChart 
-              formatTextValue={value=>`${balanceDays} days left`}
-              textColor='#000'
-              style={{width:'100%'}}
-              nrOfLevels={3}
-              percent={balanceDays/totalDays} 
-              colors={['#FC0100','#FFFB0B','#49FC01']}
-              />
-          </div>
-          <UpgradePlane packages={packages} />
-          
+    const dispatch = useDispatch()
+    const { packages,fname,lname } = useSelector(state => state.user)
+
+    return (
+        <div>
+            <NavBar />
+            <div className="flex flex-col lg:flex-row w-full h-fit">
+
+                <div className="h-1/2 lg:h-auto w-full lg:w-1/2 py-10 pt-12 lg:pl-[67px]">
+                    <h2 className='text-black font-medium text-2xl'>Hello {fname} {lname}</h2>
+                    <h2 className='text-[#D9D9D9] font-medium text-lg'>Welcome Back !</h2>
+                    <div className="mt-5 space-y-5">
+                        <h2 className='text-black font-medium text-xl'>Current Plan</h2>
+                        <Chart />
+                    </div>
+
+
+                </div>
+                <div className="h-1/2 lg:h-auto w-full lg:w-1/2 px-[10%] py-10 pt-12 lg:pl-[67px] test space-y-10 shadow-lg">
+                    <h2 className='text-2xl font-medium '>Upgrade Plan</h2>
+                    <div className="flex flex-col justify-center lg:justify-start gap-10">
+
+                        <button onClick={() => { dispatch(setPackage(1)) }} className={`${Number(packages) === 1 ? 'border-[#FEDE00] border-2' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
+                            <CheckCircleOutline />
+                            <div className="flex flex-col items-start justify-center gap-2 h-full">
+                                <div className=""></div>
+                                <span className='text-lg font-medium'>Monthly</span>
+                                <span className='text-md'>Billed monthly</span>
+                            </div>
+                            <div className="text-xl font-medium">145 AED/<span className='font-normal'>mo</span></div>
+                        </button>
+
+                        <button onClick={() => { dispatch(setPackage(2)) }} className={`${Number(packages) === 2 ? 'border-[#FEDE00] border-2' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
+                            <CheckCircleOutline />
+                            <div className="flex flex-col items-start justify-center gap-2 h-full">
+                                <div className=""></div>
+                                <span className='text-lg font-medium'>6 Month</span>
+                                <span className='text-md'>Billed 6 month</span>
+                            </div>
+                            <div className="text-xl font-medium">700 AED/<span className='font-normal'>6 mo</span></div>
+                        </button>
+
+                        <button onClick={() => { dispatch(setPackage(3)) }} className={`${Number(packages) === 3 ? 'border-[#FEDE00] border-2' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
+                            <CheckCircleOutline />
+                            <div className="flex flex-col items-start justify-center gap-2 h-full">
+                                <div className=""></div>
+                                <span className='text-lg font-medium'>Yearly</span>
+                                <span className='text-md'>Billed yearly</span>
+                            </div>
+                            <div className="text-xl font-medium">1100 AED/<span className='font-normal'>yr</span></div>
+                        </button>
+
+                        <button className='text-xl font-medium bg-[#FEDE00] rounded-2xl h-12 w-48'>Save & Continue</button>
+                    </div>
+                </div>
+            </div>
+            <Footer />
         </div>
-      <Footer />
-    </div>
-  )
+    )
 }
 
 export default UserDashboard
 
 
 
-const UpgradePlane=({packages})=>{
-  return(
-    <div className="upgrade space-y-5">
-            {
-              Number(packages) === 3 && <div className="space-y-2">
-              <label htmlFor="">Upgrade You plan Package</label>
-              <div className="flex gap-3">
-                
-                <div className="">
-                  <input className='rounded-md border outline-none border-[#BABCBB] p-3' type={'radio'} name='package' id='2' />
-                  <label htmlFor="2"> Six Months</label>
-                </div>
-                <div className="">
-                  <input  className='rounded-md border outline-none border-[#BABCBB] p-3' type={'radio'} name='package' id='3' />
-                  <label htmlFor="3"> Twelve Months</label>
-                </div>
-              </div>
-            </div>
-            }
-
-            {
-              Number(packages) === 6 && <div className="space-y-2">
-              <label htmlFor="">Upgrade You plan Package</label>
-              <div className="flex gap-3">
-                <div className="">
-                  <input  className='rounded-md border outline-none border-[#BABCBB] p-3' type={'radio'} name='package' id='3' />
-                  <label htmlFor="3"> Twelve Months</label>
-                </div>
-              </div>
-            </div>
-            }
-            {
-              Number(packages) !==12 && <button  className='h-12 w-28 bg-red-500 rounded-md text-white' >UPGRADE</button>
-            }
-          </div>
-  )
-}
-
+const Chart = () => <GaugeChart
+formatTextValue={value => `${80} days left`}
+textColor='#000'
+style={{ width: '400px' }}
+nrOfLevels={3}
+percent={(90- 80 )/90}
+colors={[ '#49FC01','#FFFB0B', '#FC0100']}
+className='relative -left-12'
+/>

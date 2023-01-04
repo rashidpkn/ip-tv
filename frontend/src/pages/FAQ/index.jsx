@@ -83,7 +83,7 @@ function FAQS() {
     return (
       <>
       <NavBar/>
-        <div className='text-white flex flex-col items-center gap-10 bg-[#121212] py-[5%] mt-24'>
+        <div className='text-white flex flex-col items-center gap-10 bg-[#121212] py-[5%]'>
             <div className="">
                 <h2 className='text-center text-3xl md:text-5xl'>Frequently Asked Questions</h2>
             </div>

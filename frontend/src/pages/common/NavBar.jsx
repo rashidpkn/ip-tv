@@ -67,7 +67,7 @@ const DeskTopNavbar = () => {
         <span className='text-base font-semibold hover:text-[1.2rem] duration-200'>Home</span>
       </NavLink>
 
-      <NavLink className={'flex justify-center items-center gap-1 hover:drop-shadow-[2px_1px_7px_#03BAFA]'} to='/subscribe'>
+      <NavLink className={'flex justify-center items-center gap-1 hover:drop-shadow-[2px_1px_7px_#03BAFA] text-[#FEDE00]'} to='/subscribe'>
         <SubscriptionsOutlined />
         <span className='text-base font-semibold hover:text-[1.2rem] duration-200'>Subscibe</span>
       </NavLink>
