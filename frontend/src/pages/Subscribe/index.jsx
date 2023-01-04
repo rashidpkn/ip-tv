@@ -123,7 +123,7 @@ function Subscribe() {
                                 <input required className='h-12 w-full rounded-2xl border outline-none border-[#BABCBB] pl-3' type="password" />
                             </div>
                         </div>
-                        <button type='submit' className='h-12 px-2 bg-black text-white rounded-2xl text-3xl hover:rounded-xl duration-200'>Order</button>
+                        <button type='submit' className='h-12 px-3 bg-black text-white rounded-2xl text-xl hover:rounded-xl duration-200'>Order</button>
                     </form>
                 </div>
             </div>
