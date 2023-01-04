@@ -6,14 +6,39 @@ import { setMenu } from '../../redux/slice/utilSlice'
 
 import { HomeOutlined, SubscriptionsOutlined, QuizOutlined, SettingsAccessibilityOutlined, AccountCircleOutlined, PsychologyAltOutlined } from '@mui/icons-material'
 
+
+
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+
+
+
+
+
+
 function NavBar() {
   const { menu } = useSelector(state => state.util)
   const dispatch = useDispatch()
   return (
     <div className="w-full overflow-hidden font-inter">
+      <ScrollToTop />
       <div className="md:hidden h-14 fixed z-50 w-full top-0 bg-black flex justify-between items-center px-2">
         <div className=""></div>
-        <img src="/image/common/logo.png" width={125} alt="logo" />
+        <Link to={'/'}>
+          <img src="/image/common/logo.png" width={125} alt="logo" />
+        </Link>
         <AccountCircleOutlined className='hover:drop-shadow-[2px_1px_7px_#03BAFA] text-white' onClick={() => { dispatch(setMenu(!menu)) }} />
 
       </div>
@@ -90,7 +115,10 @@ const DeskTopNavbar = () => {
 
       {
         loginStatus ?
-          <button className='h-[43px] w-[169px] bg-[#FEDE00] rounded-2xl text-black' onClick={() => { dispatch(setLoginStatus(false)) }}>Logout</button> :
+          <div className="flex flex-col items-center justify-center">
+            <AccountCircleOutlined/>
+            <h2>User</h2>
+          </div>:
           <NavLink to={'/login'}>
             <button className='h-[43px] w-[169px] bg-[#FEDE00] font-medium text-xl rounded-2xl text-black' >Login</button>
           </NavLink>

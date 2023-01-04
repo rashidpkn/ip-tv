@@ -10,19 +10,30 @@ import GaugeChart from 'react-gauge-chart'
 function UserDashboard() {
 
     const dispatch = useDispatch()
-    const { packages,fname,lname } = useSelector(state => state.user)
+    const { packages, fname, lname } = useSelector(state => state.user)
 
     return (
         <div>
             <NavBar />
-            <div className="flex flex-col lg:flex-row w-full h-fit">
+            <div className="flex flex-col lg:flex-row w-full h-fit px-[10%] py-[5%] lg:p-0">
 
                 <div className="h-1/2 lg:h-auto w-full lg:w-1/2 py-10 pt-12 lg:pl-[67px]">
                     <h2 className='text-black font-medium text-2xl'>Hello {fname} {lname}</h2>
                     <h2 className='text-[#D9D9D9] font-medium text-lg'>Welcome Back !</h2>
-                    <div className="mt-5 space-y-5">
+                    <div className="mt-5 flex flex-col gap-5 w-full">
                         <h2 className='text-black font-medium text-xl'>Current Plan</h2>
-                        <Chart />
+                        <div className="self-center lg:self-start">
+                            <GaugeChart
+                                formatTextValue={value => `${80} days left`}
+                                textColor='#000'
+                                style={{ width: '400px' }}
+                                nrOfLevels={3}
+                                percent={(90 - 80) / 90}
+                                colors={['#49FC01', '#FFFB0B', '#FC0100']}
+                            />
+                        </div>
+
+
                     </div>
 
 
@@ -61,7 +72,7 @@ function UserDashboard() {
                             <div className="text-xl font-medium">1100 AED/<span className='font-normal'>yr</span></div>
                         </button>
 
-                        <button className='text-xl font-medium bg-[#FEDE00] rounded-2xl h-12 w-48'>Save & Continue</button>
+                        <button className='text-xl font-medium bg-[#FEDE00] rounded-2xl h-12 w-48 self-center lg:self-start'>Save & Continue</button>
                     </div>
                 </div>
             </div>
@@ -74,12 +85,3 @@ export default UserDashboard
 
 
 
-const Chart = () => <GaugeChart
-formatTextValue={value => `${80} days left`}
-textColor='#000'
-style={{ width: '400px' }}
-nrOfLevels={3}
-percent={(90- 80 )/90}
-colors={[ '#49FC01','#FFFB0B', '#FC0100']}
-className='relative -left-12'
-/>
