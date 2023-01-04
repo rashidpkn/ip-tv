@@ -32,7 +32,7 @@ function Footer() {
       </div>
 
 
-      <div className="bg-black min-h-[245px] flex justify-start flex-wrap px-5 py-10 gap-28 text-white">
+      <div className="bg-black min-h-[245px] pb-16 md:pb-0 flex justify-start flex-wrap px-5 py-10 gap-28 text-white">
         <img src="/image/common/logo.png" className='h-11' alt="" />
         <div className="">
           <h3 className='text-[#8D8E92] text-xl font-medium'>Quick Links</h3>
