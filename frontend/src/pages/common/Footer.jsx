@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { SettingsAccessibilityOutlined, SubscriptionsOutlined, QuizOutlined, PsychologyAltOutlined, MenuBookOutlined, CallOutlined } from '@mui/icons-material'
+import { SettingsAccessibilityOutlined, SubscriptionsOutlined, QuizOutlined, PsychologyAltOutlined, MenuBookOutlined, CallOutlined, HomeOutlined } from '@mui/icons-material'
 
 function Footer() {
   return (
@@ -29,40 +29,9 @@ function Footer() {
             <span>FAQ</span>
           </div>
         </Link>
-
-
-
-
-
-      </div><div className="flex md:hidden bg-black fixed bottom-0 w-full h-14 justify-between items-center text-white px-3">
-
-        <Link to={'/'} >
-          <div className="flex flex-col justify-center items-center hover:drop-shadow-[2px_1px_7px_#03BAFA]">
-            <HomeOutlined />
-            <span>Home</span>
-          </div>
-        </Link>
-
-        <Link to={'/subscribe'}>
-          <div className="flex flex-col justify-center items-center hover:drop-shadow-[2px_1px_7px_#03BAFA] text-[#FEDE00]">
-            {/* <img src="/image/common/icon/yellow-subscription.png" alt="" /> */}
-            <SubscriptionsOutlined />
-            <span>Subscribe</span>
-          </div>
-        </Link>
-
-        <Link to={'/faq'}>
-          <div className="flex flex-col justify-center items-center hover:drop-shadow-[2px_1px_7px_#03BAFA]">
-            <QuizOutlined />
-            <span>FAQ</span>
-          </div>
-        </Link>
-
-
-
-
-
       </div>
+
+
       <div className="bg-black min-h-[245px] flex justify-start flex-wrap px-5 py-10 gap-28 text-white">
         <img src="/image/common/logo.png" className='h-11' alt="" />
         <div className="">
