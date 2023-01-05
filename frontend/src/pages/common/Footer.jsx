@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import { SettingsAccessibilityOutlined, SubscriptionsOutlined, QuizOutlined, PsychologyAltOutlined, MenuBookOutlined, CallOutlined, HomeOutlined } from '@mui/icons-material'
-
+import { useSelector } from 'react-redux'
 function Footer() {
+  const {menu} = useSelector(state=>state.util)
   return (
-    <>
-      <div className="flex md:hidden bg-black fixed bottom-0 w-full h-14 justify-between items-center text-white px-3">
+    <div className={`${menu && 'blur-sm'}`}>
+      <div className="flex md:hidden bg-black fixed bottom-0 w-full h-14 justify-between items-center text-white px-3 z-[99999]">
 
         <Link to={'/'} >
           <div className="flex flex-col justify-center items-center hover:drop-shadow-[2px_1px_7px_#03BAFA]">
@@ -32,8 +32,10 @@ function Footer() {
       </div>
 
 
-      <div className="bg-black min-h-[245px] pb-16 md:pb-0 flex justify-start flex-wrap px-5 py-10 gap-28 text-white">
-        <img src="/image/common/logo.png" className='h-11' alt="" />
+      <div className="bg-black min-h-[245px] pb-[70px] md:pb-0 flex justify-start flex-wrap px-5 py-10 gap-28 text-white">
+        <Link to={'/'}>
+          <img src="/image/common/logo.png" className='h-11' alt="" />
+        </Link>
         <div className="">
           <h3 className='text-[#8D8E92] text-xl font-medium'>Quick Links</h3>
           <ul className='mt-5 space-y-8'>
@@ -50,13 +52,13 @@ function Footer() {
         </div>
         <div className="">
           <h3 className='text-[#8D8E92] text-xl font-medium'>Resources</h3>
-          <ul className='mt-5 space-y-8'>
+          <ul className='mt-5 flex flex-row md:flex-col gap-8'>
             <li className='flex items-center '><MenuBookOutlined />Blog</li>
             <li className='flex items-center'><CallOutlined />Contact Us</li>
           </ul>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

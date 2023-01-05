@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
-import { setLoginStatus } from '../../redux/slice/authSlice'
+// import { setLoginStatus } from '../../redux/slice/authSlice'
 import { setMenu } from '../../redux/slice/utilSlice'
 
 import { HomeOutlined, SubscriptionsOutlined, QuizOutlined, SettingsAccessibilityOutlined, AccountCircleOutlined, PsychologyAltOutlined } from '@mui/icons-material'
@@ -31,10 +31,21 @@ function ScrollToTop() {
 function NavBar() {
   const { menu } = useSelector(state => state.util)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    if(menu){
+        document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'visible'
+    }
+
+  }, [menu])
+
+
   return (
-    <div className="w-full overflow-hidden font-inter">
+    <div className={` w-full overflow-hidden font-inter`}>
       <ScrollToTop />
-      <div className="md:hidden h-14 fixed z-50 w-full top-0 bg-black flex justify-between items-center px-2">
+      <div className={`${menu && 'blur-sm'} md:hidden h-14 fixed z-50 w-full top-0 bg-black flex justify-between items-center px-2`}>
         <div className=""></div>
         <Link to={'/'}>
           <img src="/image/common/logo.png" width={125} alt="logo" />
@@ -79,7 +90,7 @@ export default NavBar
 
 const DeskTopNavbar = () => {
   const { loginStatus } = useSelector(state => state.auth)
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   return (
     <div className="hidden md:flex justify-between items-center font-medium text-lg h-24 w-full bg-black sticky text-white z-50 px-[5%]">
       

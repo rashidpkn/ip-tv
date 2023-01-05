@@ -66,7 +66,7 @@ function Screen3() {
 
 
 
-        <button className={`self-end w-[280px] h-[70px] border border-white float-right  flex group`} onClick={() => { navigate('/subscribe') }}>
+        <button data-aos="fade-right" data-aos-duration="2000" className={`self-end w-[280px] h-[70px] border border-white float-right  flex group`} onClick={() => { navigate('/subscribe') }}>
           <div className="h-full w-4/5 flex relative">
             <h2 className={`absolute h-full w-full flex justify-center items-center group-hover:text-black text-xl font-medium`}>SUBSCRIBE NOW</h2>
             <div className="flex justify-center items-center h-full w-full group-hover:w-0 duration-500"></div>

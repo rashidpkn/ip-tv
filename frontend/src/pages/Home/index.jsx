@@ -24,7 +24,7 @@ function Home() {
   }, [menu])
   
   return (
-    <div className='font-inter w-full overflow-hidden'>
+    <div className={`  font-inter w-full overflow-hidden`}>
       <NavBar />
       <div  className={`${menu && 'blur-sm'}`}>
         <Screen1 />

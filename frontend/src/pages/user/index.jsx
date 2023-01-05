@@ -21,7 +21,7 @@ function UserDashboard() {
                     <h2 className='text-black font-medium text-2xl'>Hello {fname} {lname}</h2>
                     <h2 className='text-[#D9D9D9] font-medium text-lg'>Welcome Back !</h2>
                     <div className="mt-5 flex flex-col gap-5 w-full">
-                        <h2 className='text-black font-medium text-xl'>Current Plan</h2>
+                        <h2 className='text-black font-medium text-xl underline decoration-[#D9D9D9] underline-offset-4'>Current Plan</h2>
                         <div className="self-center lg:self-start">
                             <GaugeChart
                                 formatTextValue={value => `${80} days left`}
@@ -42,7 +42,7 @@ function UserDashboard() {
                     <h2 className='text-2xl font-medium '>Upgrade Plan</h2>
                     <div className="flex flex-col justify-center lg:justify-start gap-10">
 
-                        <button onClick={() => { dispatch(setPackage(1)) }} className={`${Number(packages) === 1 ? 'border-[#FEDE00] border-2' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
+                        <button onClick={() => { dispatch(setPackage(1)) }} className={`${Number(packages) === 1 ? 'border-[#FEDE00] border-2 text-[#FEDE00]' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
                             <CheckCircleOutline />
                             <div className="flex flex-col items-start justify-center gap-2 h-full">
                                 <div className=""></div>
@@ -52,7 +52,7 @@ function UserDashboard() {
                             <div className="text-xl font-medium">145 AED/<span className='font-normal'>mo</span></div>
                         </button>
 
-                        <button onClick={() => { dispatch(setPackage(2)) }} className={`${Number(packages) === 2 ? 'border-[#FEDE00] border-2' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
+                        <button onClick={() => { dispatch(setPackage(2)) }} className={`${Number(packages) === 2 ? 'border-[#FEDE00] border-2 text-[#FEDE00]' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
                             <CheckCircleOutline />
                             <div className="flex flex-col items-start justify-center gap-2 h-full">
                                 <div className=""></div>
@@ -62,7 +62,7 @@ function UserDashboard() {
                             <div className="text-xl font-medium">700 AED/<span className='font-normal'>6 mo</span></div>
                         </button>
 
-                        <button onClick={() => { dispatch(setPackage(3)) }} className={`${Number(packages) === 3 ? 'border-[#FEDE00] border-2' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
+                        <button onClick={() => { dispatch(setPackage(3)) }} className={`${Number(packages) === 3 ? 'border-[#FEDE00] border-2 text-[#FEDE00]' : 'hover:border-2'} w-full lg:w-[328px] h-24 rounded-3xl border   flex justify-between items-center p-4 gap-2`}>
                             <CheckCircleOutline />
                             <div className="flex flex-col items-start justify-center gap-2 h-full">
                                 <div className=""></div>

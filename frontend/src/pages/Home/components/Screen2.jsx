@@ -7,10 +7,10 @@ function Screen2() {
         <div className=' px-[5%] py-[100px]  text-white bg-center bg-cover bg-no-repeat space-y-5 h-max' style={{ backgroundImage: 'url("/image/home/screen2.webp")' }}>
             <div className="flex justify-center items-center flex-col lg:flex-row gap-y-10">
                 <div data-aos="fade-right" data-aos-duration="2000" className="w-full lg:w-1/2 space-y-5">
-                    <div className="flex  items-center">
-                        <h2 className='text-[34px] font-bold'>WHY CHOOSE </h2> <img className='w-[172px]' src="/image/common/logo.png" alt="" />
+                    <div className="flex  items-center gap-1">
+                        <h2 className='text-2xl lg:text-4xl font-bold'>WHY CHOOSE </h2> <img className='w-[140px] lg:w-[172px]' src="/image/common/logo.png" alt="" />
                     </div>
-                    <h2 className='text-7xl font-bold'>Watch TV on <br /> your own terms</h2>
+                    <h2 className='text-5xl lg:text-7xl font-bold'>Watch TV <br className='block lg:hidden' /> on <br className='hidden lg:block ' /> your <br className='block lg:hidden' /> own terms</h2>
                 </div>
                 <ul data-aos="fade-left" data-aos-duration="2000" className="w-full lg:w-1/2 space-y-5 text-xl font-medium text-justify">
                     <li className='flex justify-start'>
@@ -53,7 +53,7 @@ function Screen2() {
                 </div>
             </div>
 
-            <button className={`w-[280px] h-[70px] border border-white float-right  flex group`} onClick={() => { navigate('/subscribe') }}>
+            <button data-aos="fade-right" data-aos-duration="2000" className={`w-[280px] h-[70px] border border-white float-right  flex group`} onClick={() => { navigate('/subscribe') }}>
                 <div className="h-full w-4/5 flex relative">
                     <h2 className={`absolute h-full w-full flex justify-center items-center group-hover:text-black text-xl font-medium`}>SUBSCRIBE NOW</h2>
                     <div className="flex justify-center items-center h-full w-full group-hover:w-0 duration-500"></div>

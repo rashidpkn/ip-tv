@@ -23,7 +23,7 @@ function Screen4() {
                     <div className=" bg-black/50">
                         <img className='relative -z-50 w-full h-full object-cover group-hover:scale-110 duration-500' src="/image/home/st.webp" alt="" />
                     </div>
-                    <div className="absolute top-10 left-10 text-white space-y-5">
+                    <div className="absolute bottom-10 left-2 lg:left-10 text-white space-y-5">
                         <h2 className='text-2xl font-semibold'>Latest Movies</h2>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ function Screen4() {
                     <div className=" bg-black/50">
                         <img className='relative -z-10 w-full h-full object-cover group-hover:scale-110 duration-500' src="/image/home/harry.webp" alt="" />
                     </div>
-                    <div className="absolute top-10 left-10 text-white space-y-5">
+                    <div className="absolute bottom-10 left-2 lg:left-10 text-white space-y-5">
                         <h2 className='text-2xl font-semibold'>Popular</h2>
                     </div>
                 </div>
