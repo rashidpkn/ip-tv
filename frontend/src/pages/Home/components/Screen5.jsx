@@ -8,7 +8,7 @@ function Screen5() {
             <h2 className='text-4xl font-bold'>REVIEWS</h2>
             <div className="">
             
-            <div class="elfsight-app-4ca00499-c523-4b98-8543-8da6a0b9a289"></div>
+              <div className="elfsight-app-4ca00499-c523-4b98-8543-8da6a0b9a289"></div>
             </div>
             
             <button data-aos="fade-right" data-aos-duration="2000" className={` w-[280px] h-[70px] border  float-right  flex group`} onClick={() => { navigate('/subscribe') }}>

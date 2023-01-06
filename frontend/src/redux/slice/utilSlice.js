@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    menu:false
+    menu:false,
+    dashboardMenu : 1,
 }
 
 const utilSlice = createSlice({
@@ -10,10 +11,13 @@ const utilSlice = createSlice({
   reducers: {
     setMenu(state,{payload}){
         state.menu = payload
+    },
+    setDashboardMenu(state,{payload}){
+      state.dashboardMenu = payload
     }
   }
 });
 
-export const {setMenu} = utilSlice.actions
+export const {setMenu,setDashboardMenu} = utilSlice.actions
 
 export default utilSlice.reducer

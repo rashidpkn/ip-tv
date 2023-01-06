@@ -1,15 +1,27 @@
 import React from 'react'
-import Footer from '../common/Footer'
-import NavBar from '../common/NavBar'
+import Content from './components/Content'
+import NavBar from './components/NavBar'
+
+import SideBar from './components/SideBar'
+
 
 function AdminDashboard() {
   return (
-    <div>
-    <NavBar/>
-      <div className="mt-24 py-[5%] px-[10%] ">AdminDashboard</div>
-    <Footer />
-  </div>
+    <div className='flex'>
+      <SideBar/>
+      <div className="h-screen w-[calc(100%-18rem)]">
+        <NavBar/>
+        <Content/>
+      </div>
+    </div>
   )
 }
 
 export default AdminDashboard
+
+
+
+
+
+
+
