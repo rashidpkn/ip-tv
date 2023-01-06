@@ -92,7 +92,7 @@ const DeskTopNavbar = () => {
   const { loginStatus } = useSelector(state => state.auth)
   // const dispatch = useDispatch()
   return (
-    <div className="hidden md:flex justify-between items-center font-medium text-lg h-24 w-full bg-black sticky text-white z-50 px-[5%]">
+    <div className="hidden md:flex justify-between fixed items-center font-medium text-lg h-24 w-full bg-black  text-white z-50 px-[5%]">
       
       <NavLink to='/'>
         <img src="/image/common/logo.png" width={125} alt="logo" />
