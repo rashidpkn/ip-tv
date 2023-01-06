@@ -18,3 +18,7 @@
 .whatsapp-icon{
     font-size: 34px !important;
 }
+
+.slick-prev , .slick-next{
+    display: none !important;
+}

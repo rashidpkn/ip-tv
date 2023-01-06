@@ -1,5 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function Screen2() {
     const navigate = useNavigate()
@@ -33,25 +36,17 @@ function Screen2() {
                     </li>
                 </ul>
             </div>
-
-            <div className="margue h-[223px]  w-full border-y border-white hidden lg:flex">
-                <div className="h-full w-1/4 flex flex-col justify-center gap-5">
-                    <span className='text-2xl font-medium'>Channels</span>
-                    <h2 className='text-7xl font-bold'>22000+</h2>
-                </div>
-                <div className="h-full w-1/4 flex flex-col justify-center gap-5">
-                    <span className='text-2xl font-medium'>Movies</span>
-                    <h2 className='text-7xl font-bold'>8000+</h2>
-                </div>
-                <div className="h-full w-1/4 flex flex-col justify-center gap-5">
-                    <span className='text-2xl font-medium'>Sports</span>
-                    <h2 className='text-7xl font-bold'>1000+</h2>
-                </div>
-                <div className="h-full w-1/4 flex flex-col justify-center gap-5">
-                    <span className='text-2xl font-medium'>Live Channels</span>
-                    <h2 className='text-7xl font-bold'>5000+</h2>
-                </div>
+            <div className="hidden lg:block">
+                <MargueSlider slidesToShow={4}/>
             </div>
+            <div className="hidden md:block lg:hidden">
+                <MargueSlider slidesToShow={3}/>
+            </div>
+
+            <div className="md:hidden">
+                <MargueSlider slidesToShow={2}/>
+            </div>
+
 
             <button data-aos="fade-right" data-aos-duration="2000" className={`w-[280px] h-[70px] border border-white float-right  flex group`} onClick={() => { navigate('/subscribe') }}>
                 <div className="h-full w-4/5 flex relative">
@@ -60,9 +55,9 @@ function Screen2() {
                     <div className={`flex justify-center items-center h-full bg-[#FEDE00] w-0 group-hover:w-full duration-500`}></div>
                 </div>
                 <div className="h-full w-1/5  bg-[#FEDE00] flex justify-center items-center">
-                <span className="material-symbols-outlined text-[40px] group-hover:text-black">
-                    nest_remote
-                </span>
+                    <span className="material-symbols-outlined text-[40px] group-hover:text-black">
+                        nest_remote
+                    </span>
                 </div>
             </button>
         </div>
@@ -70,3 +65,42 @@ function Screen2() {
 }
 
 export default Screen2
+
+const MargueSlider = ({slidesToShow}) => {
+    const settings = {
+        infinite: true,
+        slidesToShow,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 500,
+        autoplaySpeed: 1000,
+        cssEase: "linear",
+    };
+    return (
+        <Slider {...settings} className="margue w-full border-y border-white ">
+            <SingleSlide title={'Channels'} count={'22000+'} />
+            <SingleSlide title={'Movies'} count={'8000+'} />
+            <SingleSlide title={'Sports'} count={'1000+'} />
+            <SingleSlide title={'Live Channels'} count={'5000+'} />
+
+            <SingleSlide title={'Channels'} count={'22000+'} />
+            <SingleSlide title={'Movies'} count={'8000+'} />
+            <SingleSlide title={'Sports'} count={'1000+'} />
+            <SingleSlide title={'Live Channels'} count={'5000+'} />
+
+            <SingleSlide title={'Channels'} count={'22000+'} />
+            <SingleSlide title={'Movies'} count={'8000+'} />
+            <SingleSlide title={'Sports'} count={'1000+'} />
+            <SingleSlide title={'Live Channels'} count={'5000+'} />
+        </Slider>
+    )
+}
+
+const SingleSlide = ({title,count}) => (
+    <div className="py-5">
+        <div className="flex flex-col justify-center gap-5">
+            <span className='text-xl md:text-2xl font-medium'>{title}</span>
+            <h2 className='text-4xl md:text-7xl font-bold'>{count}</h2>
+        </div>
+    </div>
+)
