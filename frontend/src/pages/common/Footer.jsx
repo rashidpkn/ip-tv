@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { SettingsAccessibilityOutlined, SubscriptionsOutlined, QuizOutlined, PsychologyAltOutlined, MenuBookOutlined, CallOutlined, HomeOutlined } from '@mui/icons-material'
+import { SettingsAccessibilityOutlined, SubscriptionsOutlined, QuizOutlined, PsychologyAltOutlined, MenuBookOutlined, CallOutlined, HomeOutlined, WhatsApp } from '@mui/icons-material'
 import { useSelector } from 'react-redux'
 function Footer() {
   const {menu} = useSelector(state=>state.util)
@@ -57,6 +57,9 @@ function Footer() {
             <li className='flex items-center'><CallOutlined />Contact Us</li>
           </ul>
         </div>
+      </div>
+      <div className="fixed bottom-16 lg:bottom-10  right-3 lg:right-10 rounded-full h-12 w-12 bg-green-500 flex justify-center items-center text-white  z-50">
+        <WhatsApp className='whatsapp-icon'/>
       </div>
     </div>
   )

@@ -14,14 +14,7 @@ import { useSelector } from 'react-redux';
 function Home() {
   Aos.init()
   const {menu} = useSelector(state=>state.util)
-  useEffect(() => {
-    if(menu){
-        document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'visible'
-    }
-
-  }, [menu])
+  
   
   return (
     <div className={`  font-inter w-full overflow-hidden`}>

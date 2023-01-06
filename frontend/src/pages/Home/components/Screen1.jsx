@@ -17,8 +17,8 @@ function Screen1() {
   return (
     <div className="screen1 w-full h-[calc(100vh-3.5rem)] md:h-[calc(100vh-6rem)] overflow-hidden relative">
       <div className="block md:hidden h-full">
-        <img src="/image/home/mob-cricket.png" className='h-full w-full object-cover' alt="" />
-        {/* <img src="/image/home/banner.png" className='h-full w-full object-cover' alt="" /> */}
+        {/* <img src="/image/home/mob-cricket.png" className='h-full w-full object-cover' alt="" /> */}
+        <img src="/image/home/banner-mob.png" className='h-full w-full object-cover' alt="" />
       </div>
       {/* <Slider {...settings} className='hidden md:block h-full'> */}
         <div className="relative h-full hidden md:block ">
