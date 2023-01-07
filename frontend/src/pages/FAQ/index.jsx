@@ -1,11 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import Footer from '../common/Footer'
 import NavBar from '../common/NavBar'
 import FAQ from './FAQ'
 
 
 function FAQS() {
-
+  const {menu} = useSelector(state=>state.util)
     const faq = [
         {
             question:'What is IPTV ?',
@@ -73,17 +74,13 @@ function FAQS() {
         {
           question:'Im facing to buffering issues with channels. What is happening?',
           ans:`Sometimes you may experience buffering due to low internet speed, high internet traffic . If you experience buffering press “pause” for 10-15 seconds and resume, most of the time that will eliminate the need to buffer. If this doesn’t solve the problem, log out from FireMedia (clicking the top right icon), then click on “Refresh DNS”, then log back in.`
-        },
-        // {
-        //   question:'',
-        //   ans:``
-        // },
-        
+        }, 
     ]
     return (
       <>
       <NavBar/>
-        <div className='text-white flex flex-col items-center gap-10 bg-[#121212] py-[5%]'>
+      
+        <div className={` ${menu && 'blur-sm'} text-white flex flex-col items-center gap-10 bg-[#121212] py-[5%]`}>
             <div className="">
                 <h2 className='text-center text-3xl md:text-5xl'>Frequently Asked Questions</h2>
             </div>

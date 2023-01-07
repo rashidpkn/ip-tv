@@ -13,7 +13,7 @@ function Subscribe() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { fname, lname, phone, address, emirates, packages, email, password } = useSelector(state => state.user)
-
+    const {menu} = useSelector(state=>state.util)
     const formHandler = async () => {
         const res = await (await axios.post(`${backendIP}/user/create`, { fname, lname, phone, address, emirates, packages, email, password })).data
         const { loginStatus, error } = res
@@ -30,7 +30,7 @@ function Subscribe() {
     return (
         <div>
             <NavBar />
-            <div className="flex flex-col lg:flex-row w-full h-fit lg:p-4">
+            <div className={`${menu && 'blur-sm'} flex flex-col lg:flex-row w-full h-fit lg:p-4`}>
                 <div className="h-1/2 lg:h-auto w-full lg:w-1/2 px-[10%] py-10 pt-12 lg:pl-[67px] lg:pt-[27px] bg-black text-white space-y-10 ">
                     <h2 className='text-4xl font-medium '>Package</h2>
                     <div className="flex flex-col justify-center lg:justify-start gap-10">
